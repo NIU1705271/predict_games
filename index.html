@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Punts - Futbol</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🏆 Lliga de Pronòstics</h1>
+            <p>Calculadora setmanal de punts</p>
+        </header>
+
+        <!-- Save / Load Controls -->
+        <div class="save-controls">
+            <div class="save-group">
+                <input type="text" id="save-name-input" placeholder="Nom del guardat...">
+                <button id="save-btn" class="primary-btn">💾 Guardar</button>
+            </div>
+            <div class="load-group">
+                <select id="saved-select">
+                    <option value="">-- Carregar guardat --</option>
+                </select>
+                <button id="load-btn" class="secondary-btn">📂 Carregar</button>
+                <button id="delete-save-btn" class="danger-btn">🗑️ Eliminar</button>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="featured-match-selector">
+                <label for="featured-match-select">Partit Estrella (x2 si exacte):</label>
+                <select id="featured-match-select">
+                    <option value="">Cap</option>
+                    <!-- Options populated by JS -->
+                </select>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table id="predictions-table">
+                <thead>
+                    <tr>
+                        <th class="col-match">#</th>
+                        <th class="col-teams">Equips (Local - Visitant)</th>
+                        <th class="col-result">Resultat Real</th>
+                        <th class="col-user">Pronòstic Usuari 1</th>
+                        <th class="col-user">Pronòstic Usuari 2</th>
+                        <th class="col-user">Pronòstic Usuari 3</th>
+                    </tr>
+                </thead>
+                <tbody id="match-rows">
+                    <!-- Rows will be injected here by JS -->
+                </tbody>
+                <tfoot>
+                    <tr class="total-row">
+                        <td colspan="3">Total Punts</td>
+                        <td id="total-u1">0</td>
+                        <td id="total-u2">0</td>
+                        <td id="total-u3">0</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="actions">
+            <button id="reset-btn" class="danger-btn">Reset</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
